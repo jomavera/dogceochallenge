@@ -20,7 +20,7 @@ const BarraOpciones = (props) => {
 
   async function fetchBreedList() {
     const response = await listAllBreeds();
-    const data = await response.data.message;
+    const data = await response.message;
     let respBreeds = Object.keys(data).map(e => {
       return {
         key: e,
@@ -43,7 +43,7 @@ const BarraOpciones = (props) => {
       responses.then(resp => {
         let subBreedsTemp = []
         resp.forEach(e => {
-          e.data.message.forEach(sb => subBreedsTemp.push(sb))
+          e.message.forEach(sb => subBreedsTemp.push(sb))
         })
         let respSubBreeds = subBreedsTemp.map(e => {
           return {

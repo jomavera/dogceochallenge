@@ -38,7 +38,7 @@ function App() {
         let images = []
         resp.forEach(e => {
           if (e.status === "fulfilled") {
-            e.value.data.message.forEach(sb => images.push(sb))
+            e.value.message.forEach(sb => images.push(sb))
           }
         })
         setImages(images)
@@ -52,7 +52,7 @@ function App() {
       responses.then(resp => {
         let images = []
         resp.forEach(e => {
-          e.data.message.forEach(sb => images.push(sb))
+          e.message.forEach(sb => images.push(sb))
         })
         setImages(images)
       })
