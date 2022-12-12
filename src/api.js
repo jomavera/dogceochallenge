@@ -3,7 +3,7 @@ export const listAllBreeds = async () => {
     method: "GET",
   });
 
-  const data = await response.json()
+  const data = await response.json();
   return data;
 };
 
@@ -12,7 +12,7 @@ export const listAllSubBreeds = async (breed) => {
     method: "GET",
   });
 
-  const data = await response.json()
+  const data = await response.json();
   return data;
 };
 
@@ -21,7 +21,7 @@ export const searchImagesBreed = async (breed) => {
     method:"GET"
   });
 
-  const data = await response.json()
+  const data = await response.json();
   return data;
 };
 
@@ -30,6 +30,6 @@ export const searchImagesSubBreed = async (breed, subBreed) => {
     method:"GET"
   });
 
-  const data = await response.json()
+  const data = await response.json();
   return data;
 };

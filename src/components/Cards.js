@@ -9,7 +9,7 @@ const Cards = (props) => {
         key={ix}
       />
     )
-  })
+  });
 
   return <div className="row row-cols-3">{cartas}</div>;
 }

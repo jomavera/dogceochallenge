@@ -2,14 +2,14 @@ import React from "react";
 
 export const Card = (props) => {
 
-    const regexp = /(?<=https:\/\/images\.dog\.ceo\/breeds\/)\w+-*\w+/g
+    const regexp = /(?<=https:\/\/images\.dog\.ceo\/breeds\/)\w+-*\w+/g;
     const regexp2 = /\w+/g;
     
-    var raza
+    var raza;
 
     if (props.imagen) {
 
-        const razaArray = props.imagen.match(regexp)[0].match(regexp2)
+        const razaArray = props.imagen.match(regexp)[0].match(regexp2);
         
         if (razaArray.length > 1) {
             raza = <h5 className="card-title"><b>Raza</b>: {razaArray[0]} - <b>Sub Raza</b>: {razaArray[1]}</h5>
@@ -17,7 +17,7 @@ export const Card = (props) => {
             raza = <h5 className="card-title"><b>Raza</b>: {razaArray[0]}</h5>
         }
     } else {
-        raza = ''
+        raza = '';
     }
 
     return (

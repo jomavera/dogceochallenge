@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { listAllBreeds, listAllSubBreeds } from "../api.js";
-import { Dropdown } from 'semantic-ui-react'
+import { Dropdown } from 'semantic-ui-react';
 
 const BarraOpciones = (props) => {
   const [breeds, setBreeds] = useState([]);
@@ -28,7 +28,7 @@ const BarraOpciones = (props) => {
         value: e,
       };
     });
-    setBreeds(respBreeds)
+    setBreeds(respBreeds);
   }
 
   async function fetchSubBreedList(breeds) {
@@ -38,7 +38,7 @@ const BarraOpciones = (props) => {
       breeds.forEach(breed => {
         promises.push(listAllSubBreeds(breed))
       });
-      const responses = Promise.all(promises)
+      const responses = Promise.all(promises);
 
       responses.then(resp => {
         let subBreedsTemp = []
@@ -50,9 +50,9 @@ const BarraOpciones = (props) => {
             key: e,
             text: e,
             value: e,
-          }
-        })
-        setSubBreeds(respSubBreeds)
+          };
+        });
+        setSubBreeds(respSubBreeds);
       })
     }
   }
@@ -60,19 +60,19 @@ const BarraOpciones = (props) => {
   const manejarSubmit = (e) => {
     const error = (breedSelec && breedSelec.length > 0) ? false : true
     if (!error) {
-      props.onSubmit([breedSelec, subBreedSelec])
+      props.onSubmit([breedSelec, subBreedSelec]);
     } else {
       alert("Select breed to search for images!");
     }
-    e.preventDefault()
+    e.preventDefault();
   }
 
   const onSelectBreed = (e, data) => {
-    setBreedSelec(data.value)
+    setBreedSelec(data.value);
   }
 
   const onSelectSubBreed = (e, data) => {
-    setSubBreedSelec(data.value)
+    setSubBreedSelec(data.value);
   }
 
   return (

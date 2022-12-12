@@ -4,15 +4,15 @@ import React from "react";
 const Paginacion = (props) => {
 
     const handleClick = e => {
-        props.onClick(parseInt(e.target.innerText))
+        props.onClick(parseInt(e.target.innerText));
     }
     
-    let numPaginas = Math.ceil(props.numImagenes/props.numPerPage)
-    let paginas = []
+    let numPaginas = Math.ceil(props.numImagenes/props.numPerPage);
+    let paginas = [];
 
 
     for (let ix = 1; ix <= numPaginas; ix++) {
-        paginas.push(<li className="page-item" key={`${ix}`}><a className="page-link" id={`pagina-${ix}`} key={`pagina-${ix}`} onClick={e=>{handleClick(e)}}>{ix}</a></li>)
+        paginas.push(<li className="page-item" key={`${ix}`}><a className="page-link" id={`pagina-${ix}`} key={`pagina-${ix}`} onClick={e=>{handleClick(e)}}>{ix}</a></li>);
     }
 
     return (
@@ -23,4 +23,4 @@ const Paginacion = (props) => {
     </nav>)
 }
 
-export default Paginacion
+export default Paginacion;
