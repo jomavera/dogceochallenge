@@ -77,7 +77,6 @@ const BarraOpciones = (props) => {
 
   return (
     <div>
-      <h1> Dog CEO Challenge</h1>
       <form className="ui form">
         <label className="form-check-label">Select Breed</label>
         <div className="field">

@@ -24,18 +24,3 @@ const Paginacion = (props) => {
 }
 
 export default Paginacion
-
-
-// let botonesPaginacion = '';
-//     let numPags = Math.ceil(contador/10)
-//     for (let index = 1; index<numPags+1;index++){
-//         botonesPaginacion += `<li class="page-item"><a class="page-link" id="pagina-${index}">${index}</a></li>`;
-//     }
-//     paginacion.innerHTML = botonesPaginacion;
-//     for (let index = 1; index<numPags+1;index++){
-//         var element = document.getElementById(`pagina-${index}`);
-//         element.onclick = function(){
-//             searchPageCategory(index, 1);
-//         }
-//     }
-//     const addToCart = document.getElementsByClassName('anadirCarro');

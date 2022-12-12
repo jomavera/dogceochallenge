@@ -5,11 +5,11 @@ const Cards = (props) => {
   const cartas = props.imagenes.map((e, ix) => {
     return (
       <Card
-        imagen = {e}
+        imagen={e}
         key={ix}
       />
-    );
-  });
+    )
+  })
 
   return <div className="row row-cols-3">{cartas}</div>;
 }
