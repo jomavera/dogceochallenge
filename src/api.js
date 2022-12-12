@@ -1,34 +1,35 @@
-import axios from 'axios';
-
-
 export const listAllBreeds = async () => {
-  const response = await axios.get('https://dog.ceo/api/breeds/list/all', {
-    headers: {
-      'Content-Type': 'application/json',
-    },
+  const response = await fetch('https://dog.ceo/api/breeds/list/all', {
+    method: "GET",
   });
 
-  return response;
+  const data = await response.json()
+  return data;
 };
 
 export const listAllSubBreeds = async (breed) => {
-  const response = await axios.get(`https://dog.ceo/api/breed/${breed}/list`, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
+  const response = await fetch(`https://dog.ceo/api/breed/${breed}/list`, {
+    method: "GET",
   });
 
-  return response;
+  const data = await response.json()
+  return data;
 };
 
 export const searchImagesBreed = async (breed) => {
-  const response = await axios.get(`https://dog.ceo/api/breed/${breed}/images`, {});
+  const response = await fetch(`https://dog.ceo/api/breed/${breed}/images`, {
+    method:"GET"
+  });
 
-  return response;
+  const data = await response.json()
+  return data;
 };
 
 export const searchImagesSubBreed = async (breed, subBreed) => {
-  const response = await axios.get(`https://dog.ceo/api/breed/${breed}/${subBreed}/images`, {});
+  const response = await fetch(`https://dog.ceo/api/breed/${breed}/${subBreed}/images`, {
+    method:"GET"
+  });
 
-  return response;
+  const data = await response.json()
+  return data;
 };
