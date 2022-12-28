@@ -11,13 +11,11 @@ function App() {
 
   const [imagesState, setImages] = useState([]);
   const [imagesSelec, setImagesSelec] = useState([]);
-  const [numImages, setNumImages] = useState(0);
-
+  const numImages = imagesState.length
   const numPerPage = 18
 
   useEffect(() => {
     if (imagesState && imagesState.length > 0) {
-      setNumImages(imagesState.length);
       setImagesSelec(imagesState.slice(0, numPerPage));
     }
   }, [imagesState]);
@@ -38,7 +36,6 @@ function App() {
         let images = [];
         resp.forEach(e => {
           if (e.status === "fulfilled" && e.value.status !== "error") {
-            console.log(e)
             e.value.message.forEach(sb => images.push(sb));
           }
         })
